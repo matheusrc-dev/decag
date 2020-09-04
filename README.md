@@ -1,2 +1,2 @@
-# decag
+# Decag
 Plataforma para contratar músicos
