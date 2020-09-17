@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/partials/header.css">
+    <link rel="stylesheet" href="../styles/partials/forms.css">
+    <link rel="stylesheet" href="../styles/partials/page-study.css">
+
+    <title>Proffy</title>
+</head>
+
+<body id="page-study">
+
+    <div id="container">
+        <header class="page-header">
+
+            <div class="top-bar-container">
+                <a href="../../../index.html">
+                    <img src="../images/icons/back.svg" alt="Voltar">
+                </a>
+                <p class = "up-info">Decag</p>
+            </div>
+
+            <div class="header-content">
+                <strong>Esses são os proffys disponíveis.</strong>
+                <form id="search-teachers">
+
+                    <div class="select-block">
+                        <label for="subject">Matéria</label>
+                        <select name="subject" id="subject">
+                            <option value="" disabled="" hidden="">Selecione uma opção</option>
+
+                            <option value="">Opção 1</option>
+                            <option value="">Opção 1</option>
+                            <option value="">Opção 1</option>
+
+                        </select>
+                    </div>
+
+                    <div class="select-block">
+                        <label for="weekday">Dia da semana</label>
+                        <select name="weekday" id="weekday">
+                            <option value="" disabled="" hidden="">Selecione uma opção</option>
+
+                            <option value="">Opção 1</option>
+                            <option value="">Opção 1</option>
+                            <option value="">Opção 1</option>
+                            <option value="">Opção 1</option>
+
+                        </select>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="time">Hora</label>
+                        <input name="time" id="time" type="time" value="">
+                    </div>
+
+                    <button type="submit">Filtrar</button>
+
+                </form>
+            </div>
+
+        </header>
+
+        <main>
+
+            <p class="no-results">Nenhum professor encontrado com a sua pesquisa</p>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Archivo&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/partials/header.css">
+  <link rel="stylesheet" href="../styles/partials/forms.css">
+  <link rel="stylesheet" href="../styles/partials/procurar-musicos.css">
+
+  <title>Decag</title>
+</head>
+
+<body id="page-study">
+
+  <div id="container">
+    <header class="page-header">
+
+      <div class="top-bar-container">
+        <a href="../../../index.html">
+          <img src="../images/icons/back.svg" alt="Voltar">
+        </a>
+        <p class = "up-info">Decag</p>
+      </div>
+
+      <div class="header-content">
+        <strong>Esses são os músicos disponíveis</strong>
+        <form id="search-musicians">
+
+          <div class="select-block">
+            <label for="subject">Instrumento</label>
+            <select name="subject" id="subject">
+              <option value="" disabled="" hidden="">Selecione uma opção</option>
+
+              <option value="">Opção 1</option>
+              <option value="">Opção 1</option>
+              <option value="">Opção 1</option>
+
+            </select>
+          </div>
+
+          <div class="select-block">
+            <label for="weekday">Dia da semana</label>
+            <select name="weekday" id="weekday">
+              <option value="" disabled="" hidden="">Selecione uma opção</option>
+              <option value="">Segunda</option>
+              <option value="">Terça</option>
+              <option value="">Quarta</option>
+              <option value="">Quinta</option>
+              <option value="">Sexta</option>
+              <option value="">Sábado</option>
+              <option value="">Domingo</option>
+
+            </select>
+          </div>
+
+          <div class="input-block">
+            <label for="time">Hora</label>
+            <input name="time" id="time" type="time" value="">
+          </div>
+
+          <button type="submit">Filtrar</button>
+
+        </form>
+      </div>
+
+    </header>
+
+    <main>
+      <article class="musician-item">
+
+        <header>
+          <img
+            src="https://avatars3.githubusercontent.com/u/48885595?s=460&u=ecd7f06ca85791028a1f1066d2958d0291e90245&v=4"
+            alt="Nome músico">
+          <div>
+            <strong>Matheus Rocha</strong>
+            <span>Violão, Bateria, Baixo, Guitarra</span>
+          </div>
+        </header>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan sagittis posuere. Sed ac quam a turpis
+          porttitor accumsan. Nullam neque felis, rutrum nec leo ut, posuere ultrices.
+        </p>
+
+        <div class="weekdays">
+          <p><span>Dia</span>Da semana</p>
+        </div>
+
+
+
+        <footer>
+          <p>Preço/hora<strong>R$ 50,00</strong></p>
+
+          <a href="https://api.whatsapp.com/send?l=pt_BR&phone=5542&text=Tenho interesse em te contratar para uma ocasião, Matheus"
+            class="button" target="_blank">
+            <img src="../images/icons/whatsapp.svg" alt="WhatsApp">
+            Entrar em contato
+          </a>
+        </footer>
+
+      </article>
+    </main>
+  </div>
+</body>
+
+</html>
