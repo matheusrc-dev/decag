@@ -149,4 +149,10 @@
     }
 }
 
+@media(max-width: 460px) {
+    .select-block .grupo {
+        display: block;
+    }
+}
+
 

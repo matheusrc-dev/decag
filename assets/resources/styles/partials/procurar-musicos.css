@@ -1,4 +1,4 @@
-#page-study #container {
+#page-musico #container {
     width: 100vw;
     height: 100vh;
 }
@@ -35,7 +35,7 @@
     background-color: var(--color-secondary-dark);
 }
 
-#page-study main {
+#page-musico main {
     margin: 3.2rem auto;
     width: 90%; 
 }
@@ -127,14 +127,29 @@
     background: var(--color-secondary-dark);
 }
 
-#page-study main .no-results {
+.weekdays {
+    display: flex;
+    justify-content: space-between;
+    margin: 36px;
+}
+
+.weekdays .day-item{
+    border: solid 1px var(--color-text-base);
+    border-radius: 10px;
+    height: 100px;
+    width: 85px;
+    padding: 8px
+}
+
+#page-musico main .no-results {
     max-width: 30rem;
     margin: 12rem auto;
     text-align: center;
 }
 
+
 @media (min-width: 700px) {
-    #page-study #container {
+    #page-musico #container {
         max-width: 100vw;
     }
 
@@ -173,7 +188,7 @@
         bottom: -28px;
     }
 
-    #page-study main {
+    #page-musico main {
         padding: 32px 0;
         max-width: 740px;
         margin: 0 auto;
