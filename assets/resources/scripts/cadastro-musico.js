@@ -99,10 +99,10 @@
             }
 
             //Capitura os valores do campo do formulário para cadastrar no banco
-            let name = document.querySelector('#name').value;
+            let name = document.querySelector('#name').value.toUpperCase();
             let avatar = document.querySelector('#avatar').value;
             let whatsapp = document.querySelector('#whatsapp').value;
-            let bio = document.querySelector('#bio').value;
+            let bio = document.querySelector('#bio').value.toLowerCase();
             let instruments = [];
 
             //Adiciona apenas os Instrumentos checked
@@ -123,10 +123,10 @@
             database.saveItemArray('musicos', musico);
             
             // VsCode
-            // location.href = `/assets/resources/pages/procurar-musicos.html`;    
+            location.href = `/assets/resources/pages/procurar-musicos.html`;    
     
             // GitHub
-            window.location = `/decag/assets/resources/pages/procurar-musicos.html`;
+            // window.location = `/decag/assets/resources/pages/procurar-musicos.html`;
 
             return false;
 

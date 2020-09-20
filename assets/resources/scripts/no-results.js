@@ -19,11 +19,6 @@ function update() {
 
     let info = document.getElementsByTagName('p');
 
-    // setInterval(()=>{
-    //     info[1].setAttribute('id', 'change-visibility');
-    //     removeAtt(info[1], 'id');
-    // }, 2000);
-
     let pageHeader = document.querySelector('.page-header');
 
     pageHeader.addEventListener('mouseout', () => {
