@@ -11,7 +11,7 @@ Caixas de Diálogo
 
 Temporizadores
 
-- [ ] setInterval
+- [x] setInterval
 - [x] setTimeout
 
 Funções
@@ -28,25 +28,25 @@ Funções
 Eventos
 
 - [x] Evento de carregamento do documento - onload
-- [ ] Evento de movimento do mouse
+- [x] Evento de movimento do mouse
 - [x] Evento de teclado - usar charCode ou keyCode
 - [x] Eventos de formulário - onfocus e onblur
-- [ ] Imprimir alguma propriedade do objeto event recebido como parâmetro
+- [x] Imprimir alguma propriedade do objeto event recebido como parâmetro
 - [ ] Propagação de eventos no modelo bolha (usar target e currentTarget, ou seja, disparar o evento em um elemento filho e capturar em um elemento pai) 
 
 Acesso aos elementos DOM do HTML
 
 - [x] Via referência DOM pelo id do elemento HTML
 - [x] Via getElementByID()
-- [ ] Via getElementsByName()
-- [ ] Via getElementsByTagName()
+- [x] Via getElementsByName()
+- [x] Via getElementsByTagName()
 - [x] Via seletores CSS usados na função querySelector() ou querySelectorAll()
 
 Tratadores de Evento
 
 - [x] Especificar o tratador de evento inline
-- [ ] Especificar o tratador de evento no carregamento da página HTML no modo tradicional - no onload
-- [ ] Especificar o tratador de evento no carregamento da página HTML com a função addEventListener - no onload
+- [x] Especificar o tratador de evento no carregamento da página HTML no modo tradicional - no onload
+- [x] Especificar o tratador de evento no carregamento da página HTML com a função addEventListener - no onload
 - [ ] Usar o operador this em funções tratadoras de eventos.
 
 Objetos Nativos
@@ -82,13 +82,13 @@ Formulário
 - [x] Ler e escrever em elementos input com a propriedade value
 - [x] Alterar o conteúdo de elementos div ou p com a propriedade innerHTML ou textContent
 - [x] Manipulação de elemento de listagem, como checkbox, radio ou select
-- [ ] Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements
+- [x] Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements
 
 jQuery
 
-- [x] Uso de seletores CSS - id, classe e tag
+- [ ] Uso de seletores CSS - id, classe e tag
 - [ ] Uso de seletores hierárquicos estáticos - ancestral/descendente, pai/filho, anterior/próximo
-- [x] Uso de seletores hierárquicos dinâmicos - parent/children/next
+- [ ] Uso de seletores hierárquicos dinâmicos - parent/children/next
 - [ ] Efeitos fade ou slide
 - [ ] Especificar o tratador de algum evento via jQuery
 - [ ] Manipulação do CSS via função css() e addClass()/removeClass()

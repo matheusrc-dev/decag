@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/partials/header.css">
     <link rel="stylesheet" href="../styles/partials/forms.css">
+    <link rel="stylesheet" href="../styles/partials/no-results.css">
     <link rel="stylesheet" href="../styles/partials/procurar-musicos.css">
 
     <title>Proffy</title>
 </head>
 
-<body id="page-musico">
+<body id="page-musico" onload="update()" >
 
     <div id="container">
         <header class="page-header">
@@ -32,14 +33,9 @@
                 <form id="search-musicians">
 
                     <div class="select-block">
-                        <label for="subject">Matéria</label>
+                        <label for="subject">Instrumento</label>
                         <select name="subject" id="subject">
                             <option value="" disabled="" hidden="">Selecione uma opção</option>
-
-                            <option value="">Opção 1</option>
-                            <option value="">Opção 1</option>
-                            <option value="">Opção 1</option>
-
                         </select>
                     </div>
 
@@ -47,12 +43,13 @@
                         <label for="weekday">Dia da semana</label>
                         <select name="weekday" id="weekday">
                             <option value="" disabled="" hidden="">Selecione uma opção</option>
-
-                            <option value="">Opção 1</option>
-                            <option value="">Opção 1</option>
-                            <option value="">Opção 1</option>
-                            <option value="">Opção 1</option>
-
+                            <option value="">Segunda</option>
+                            <option value="">Terça</option>
+                            <option value="">Quarta</option>
+                            <option value="">Quinta</option>
+                            <option value="">Sexta</option>
+                            <option value="">Sábado</option>
+                            <option value="">Domingo</option>
                         </select>
                     </div>
 
@@ -69,11 +66,14 @@
         </header>
 
         <main>
-
-            <p class="no-results">Nenhum músico encontrado com a sua pesquisa</p>
-
+            <p class="no-results">Nenhum músico encontrado, atualize a página em alguns minutos</p>
+            <p class="hour">Horário</p>
         </main>
-    </div>
+    </div> 
+    
+    <script src="../scripts/classes/musico.js"></script>
+    <script src="../scripts/database.js"></script>
+    <script src="../scripts/no-results.js"></script>
 
 </body>
 

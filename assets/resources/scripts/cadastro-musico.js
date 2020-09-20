@@ -5,11 +5,25 @@
     let small = document.createElement("small");
     //Adiciona os instrumentos no array
     let instrumentosQtd = document.querySelector('div.grupo').children.length;
+    let instrumentosCheck = [];
+    let instrumentosString = [];
 
-    let instrumetos = [];
+    //Pega todos os instrumentos (elementos) do checkbox
     for (let i = 0; i < instrumentosQtd * 4; i++) {
-        instrumetos.push($(`instrumentCheck${i}`));
+        instrumentosCheck.push($(`instrumentCheck${i}`));
     }
+    
+    //Adiciona os intrumentos do label no Array de instrumentosString como String
+    for(let i = 0; i < instrumentosCheck.length; i++) {
+        instrumentosString.splice(i, 1, document.querySelector(`label[for="${instrumentosCheck[i].id}"]`).innerText.trim());
+    }
+
+    //Colocar os valores no web storage atraves ta classe instrumentoo
+
+    localStorage.setItem('instrumentos', JSON.stringify(instrumentosString));
+
+    // console.log(instrumentosString);
+
 
     window.onload = function () {
         //Confirma se quer receber atualizações por email
@@ -79,35 +93,34 @@
         }
 
         document.querySelector('#create-class').onsubmit = function () {
-            if (!isAtLeastOneInstrumentSelected(instrumetos)) {
+            if (!isAtLeastOneInstrumentSelected(instrumentosCheck)) {
                 alert("Ops! Você esqueceu de selecionar os intrumentos");
                 return false;
             }
 
+            //Capitura os valores do campo do formulário para cadastrar no banco
             let name = document.querySelector('#name').value;
             let avatar = document.querySelector('#avatar').value;
             let whatsapp = document.querySelector('#whatsapp').value;
             let bio = document.querySelector('#bio').value;
             let instruments = [];
 
-            for (let i = 0; i < instrumetos.length; i++) {
-                if (instrumetos[i].checked) {
-                    instruments.push(instrumetos[i].id);
+            //Adiciona apenas os Instrumentos checked
+            for (let i = 0; i < instrumentosCheck.length; i++) {
+                if (instrumentosCheck[i].checked) {
+                    instruments.push(instrumentosString[i]);
                 }
             }
 
-            //Adiciona os intrumentos do label no Array de instrumentos como String
-            for(let i = 0; i < instruments.length; i++) {
-                instruments.splice(i, 1, document.querySelector(`label[for="${instruments[i]}"]`).innerText.trim());
-            }
+            // console.log(instruments);
 
             let cost = document.querySelector('#cost').value;
             let weekday = document.getElementById('weekday').selectedIndex;
             let time_from = document.getElementById('time_from').value;
             let time_to = document.getElementById('time_to').value; 
 
-            let musico = new Musico(database.sequenceId('musico') ,name, avatar, whatsapp, bio, instruments, cost, weekday, time_from, time_to);
-            database.saveItemArray('musico', musico);
+            let musico = new Musico(database.sequenceId('musicos') ,name, avatar, whatsapp, bio, instruments, cost, weekday, time_from, time_to);
+            database.saveItemArray('musicos', musico);
             location.href = `http://localhost:5500/assets/resources/pages/cadastro-concluido.html`;
 
             return false;

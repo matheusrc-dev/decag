@@ -1,3 +1,3 @@
 setTimeout(() => {
-    window.location = "/index.html" + window.location.search;
+    window.location = "/assets/resources/pages/procurar-musicos.html";
 }, 8000);
