@@ -10,7 +10,11 @@ function update() {
     }
     let musico = database.getArray('musicos');
     if (musico.length > 0) {
-        window.location = "/assets/resources/pages/procurar-musicos.html";
+        // VsCode
+        // window.location = `/assets/resources/pages/procurar-musicos.html`;
+
+        // GitHub
+        window.location = `/decag/assets/resources/pages/procurar-musicos.html`;
     }
 
     let info = document.getElementsByTagName('p');
@@ -29,9 +33,9 @@ function update() {
     });
     pageHeader.addEventListener('mouseover', (event) => {
         info[1].removeAttribute('id');
-        info[1].innerHTML = "Nenhum músico encontrado, atualize a página em alguns minutos<br><br><br>" 
-        +"posição do mouse: "+ event.clientX + " x " + event.clientY;
-        
+        info[1].innerHTML = "Nenhum músico encontrado, atualize a página em alguns minutos<br><br><br>"
+            + "posição do mouse: " + event.clientX + " x " + event.clientY;
+
         console.log(event.clientX, event.clientY);
     });
 

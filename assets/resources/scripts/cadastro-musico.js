@@ -122,7 +122,11 @@
             let musico = new Musico(database.sequenceId('musicos') ,name, avatar, whatsapp, bio, instruments, cost, weekday, time_from, time_to);
             database.saveItemArray('musicos', musico);
             
-            location.href = `/assets/resources/pages/procurar-musicos.html`;   
+            // VsCode
+            // location.href = `/assets/resources/pages/procurar-musicos.html`;    
+    
+            // GitHub
+            window.location = `/decag/assets/resources/pages/procurar-musicos.html`;
 
             return false;
 

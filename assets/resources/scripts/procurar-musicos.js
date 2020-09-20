@@ -7,7 +7,7 @@ function noResults() {
     // window.location = `${location.origin}/assets/resources/pages/no-results.html`;
 
     // GitHub
-    window.location = `/assets/resources/pages/no-results.html`;
+    window.location = `/decag/assets/resources/pages/no-results.html`;
 
 }
 
