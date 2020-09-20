@@ -3,7 +3,12 @@ let $$ = function (name) {
 };
 
 function noResults() {
-    window.location = "/assets/resources/pages/no-results.html";
+    // VsCode
+    // window.location = `${location.origin}/assets/resources/pages/no-results.html`;
+
+    // GitHub
+    window.location = `/assets/resources/pages/no-results.html`;
+
 }
 
 (function ($$) {

@@ -121,7 +121,8 @@
 
             let musico = new Musico(database.sequenceId('musicos') ,name, avatar, whatsapp, bio, instruments, cost, weekday, time_from, time_to);
             database.saveItemArray('musicos', musico);
-            location.href = `http://localhost:5500/assets/resources/pages/cadastro-concluido.html`;
+            
+            location.href = `/assets/resources/pages/procurar-musicos.html`;   
 
             return false;
 
