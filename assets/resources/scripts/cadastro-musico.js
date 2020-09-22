@@ -22,9 +22,6 @@
 
     localStorage.setItem('instrumentos', JSON.stringify(instrumentosString));
 
-    // console.log(instrumentosString);
-
-
     window.onload = function () {
         //Confirma se quer receber atualizações por email
         if (emailConfirm.valueOf() == true) {
@@ -112,21 +109,19 @@
                 }
             }
 
-            // console.log(instruments);
-
             let cost = document.querySelector('#cost').value;
-            let weekday = document.getElementById('weekday').selectedIndex;
-            let time_from = document.getElementById('time_from').value;
-            let time_to = document.getElementById('time_to').value; 
+            let weekday = $('weekday').selectedIndex;
+            let time_from = $('time_from').value;
+            let time_to = $('time_to').value; 
 
             let musico = new Musico(database.sequenceId('musicos') ,name, avatar, whatsapp, bio, instruments, cost, weekday, time_from, time_to);
             database.saveItemArray('musicos', musico);
             
             // VsCode
-            location.href = `/assets/resources/pages/procurar-musicos.html`;    
+            // location.href = `/assets/resources/pages/cadastro-concluido.html`;    
     
             // GitHub
-            // window.location = `/decag/assets/resources/pages/procurar-musicos.html`;
+            window.location = `/decag/assets/resources/pages/cadastro-concluido.html`;
 
             return false;
 

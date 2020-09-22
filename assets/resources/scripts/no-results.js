@@ -30,8 +30,7 @@ function update() {
         info[1].removeAttribute('id');
         info[1].innerHTML = "Nenhum músico encontrado, atualize a página em alguns minutos<br><br><br>"
             + "posição do mouse: " + event.clientX + " x " + event.clientY;
-
-        console.log(event.clientX, event.clientY);
+            
     });
 
 
