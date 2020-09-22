@@ -2,6 +2,7 @@
 Plataforma para contratar músicos
 
 GitHub Pages: https://mat-zip.github.io/decag/
+Relatório: https://youtu.be/skAUHrhECPQ
 
 Caixas de Diálogo
 
