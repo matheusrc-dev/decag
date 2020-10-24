@@ -1,58 +1,59 @@
-let $$ = function (name) {
-    return document.getElementsByName(name);
+'use strict';
+
+const $$ = function (name) {
+  return document.getElementsByName(name);
 };
 
 function noResults() {
-    // VsCode
-    // window.location = `${location.origin}/assets/resources/pages/no-results.html`;
+  // VsCode
+  window.location = `${window.location.origin}/assets/resources/pages/no-results.html`;
 
-    // GitHub
-    window.location = `/decag/assets/resources/pages/no-results.html`;
-
+  // GitHub
+  // window.location = `/decag/assets/resources/pages/no-results.html`;
 }
 
-(function ($$) {
-    let instrumentos = JSON.parse(localStorage.getItem('instrumentos'));
-    let filterInstrumentos = $$('subject');
-    let insertOnMain = document.getElementsByTagName('main');
+(function () {
+  const instrumentos = JSON.parse(localStorage.getItem('instrumentos'));
+  const filterInstrumentos = $$('subject');
+  const insertOnMain = document.getElementsByTagName('main');
 
-    window.onload = function () {
-        for (let i in instrumentos) {
-            let option = document.createElement('option');
-            option.setAttribute('id', i);
-            option.innerHTML = instrumentos[i];
-            filterInstrumentos[0].appendChild(option);
-        }
+  window.onload = function () {
+    for (let i = 0; i < instrumentos.length; i += 1) {
+      const option = document.createElement('option');
+      option.setAttribute('id', i);
+      option.innerHTML = instrumentos[i];
+      filterInstrumentos[0].appendChild(option);
+    }
 
-        let musico = database.getArray('musicos');
-        if(musico.length == 0) {
-            noResults();
-        }
+    const musico = database.getArray('musicos');
+    if (musico.length === 0) {
+      noResults();
+    }
 
-        for (let m in musico) {
-            let musicianItem = document.createElement('article');
-            musicianItem.setAttribute('class', 'musician-item');
-            musicianItem.innerHTML = `
+    for (let i = 0; i < musico.length; i += 1) {
+      const musicianItem = document.createElement('article');
+      musicianItem.setAttribute('class', 'musician-item');
+      musicianItem.innerHTML = `
             <header>
                 <img
-                  src="${musico[m].avatar}"
-                  alt="${musico[m].name}">
+                  src="${musico[i].avatar}"
+                  alt="${musico[i].name}">
                 <div>
-                  <strong>${musico[m].name}</strong>
-                  <span>${musico[m].instruments}</span>
+                  <strong>${musico[i].name}</strong>
+                  <span>${musico[i].instruments}</span>
                 </div>
               </header>
       
-              <p>${musico[m].bio}</p>
+              <p>${musico[i].bio}</p>
       
               <div class="weekdays">
       
                 <div id="segunda" class="day-item">
                   <p>
-                    <small>Dia</small><br>
+                    <small>Dia</small><br>i
                     <strong>Segunda</strong><br>
                     <small>Horário</small><br>
-                    <span id="segHr">${musico[m].time_to} - ${musico[m].time_from}</span>
+                    <span id="segHr">${musico[i].time_to} - ${musico[i].time_from}</span>
                   </p>
                 </div>
       
@@ -61,7 +62,7 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Terça</strong><br>
                     <small>Horário</small><br>
-                    <span id="terHr">${musico[m].time_to} - ${musico[m].time_from}</span>
+                    <span id="terHr">${musico[i].time_to} - ${musico[i].time_from}</span>
                   </p>
                 </div>
                 <div id="quarta" class="day-item">
@@ -69,7 +70,7 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Quarta</strong><br>
                     <small>Horário</small><br>
-                    <span id="quarHr">${musico[m].time_to} - ${musico[m].time_from}</span>
+                    <span id="quarHr">${musico[i].time_to} - ${musico[i].time_from}</span>
                   </p>
                 </div>
                 <div id="quinta" class="day-item">
@@ -77,7 +78,7 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Quinta</strong><br>
                     <small>Horário</small><br>
-                    <span id="quinHr">${musico[m].time_to} - ${musico[m].time_from}</span>
+                    <span id="quinHr">${musico[i].time_to} - ${musico[i].time_from}</span>
                   </p>
                 </div>
                 <div id="sexta" class="day-item">
@@ -85,7 +86,7 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Sexta</strong><br>
                     <small>Horário</small><br>
-                    <span id="sexHr">${musico[m].time_to} - ${musico[m].time_from}</span>
+                    <span id="sexHr">${musico[i].time_to} - ${musico[i].time_from}</span>
                   </p>
                 </div>
                 <div id="sabado" class="day-item">
@@ -93,7 +94,7 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Sabado</strong><br>
                     <small>Horário</small><br>
-                    <span id="sexHr">${musico[m].time_to} - ${musico[m].time_from}</span>
+                    <span id="sexHr">${musico[i].time_to} - ${musico[i].time_from}</span>
                   </p>
                 </div>
                 <div id="domingo" class="day-item">
@@ -101,7 +102,7 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Domingo</strong><br>
                     <small>Horário</small><br>
-                    <span id="sexHr">${musico[m].time_to} - ${musico[m].time_from}</span>
+                    <span id="sexHr">${musico[i].time_to} - ${musico[i].time_from}</span>
                   </p>
                 </div>
       
@@ -110,15 +111,15 @@ function noResults() {
       
       
               <footer>
-                <p>Preço/hora<strong>R$ ${musico[m].cost},00</strong></p>
+                <p>Preço/hora<strong>R$ ${musico[i].cost},00</strong></p>
       
-                <a href="https://api.whatsapp.com/send?l=pt_BR&phone=${musico[m].whatsapp}&text=Tenho interesse em te contratar para uma ocasião, ${musico[m].name}"
+                <a href="https://api.whatsapp.com/send?l=pt_BR&phone=${musico[i].whatsapp}&text=Tenho interesse em te contratar para uma ocasião, ${musico[i].name}"
                   class="button" target="_blank">
                   <img src="../images/icons/whatsapp.svg" alt="WhatsApp">
                   Entrar em contato
                 </a>
               </footer>`;
-               insertOnMain[0].appendChild(musicianItem);
-        }
+      insertOnMain[0].appendChild(musicianItem);
     }
-})($$);
+  };
+}());

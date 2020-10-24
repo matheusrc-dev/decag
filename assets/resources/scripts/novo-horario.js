@@ -1,11 +1,17 @@
-let listOfTime = [];
-let cloneTime;
-(function () {
+'use strict';
 
-    //Adiciona o evento de click para adicionar outro horário
-    let addTime = $('add-time').addEventListener('click', () => {
-        cloneTime = document.querySelector('.schedule-item').cloneNode(true);
-        cloneTime.innerHTML = `
+const listOfTime = [];
+let cloneTime;
+
+function $(id) {
+  return document.getElementById(id);
+}
+
+(function () {
+  //  Adiciona o evento de click para adicionar outro horário
+  $('add-time').addEventListener('click', () => {
+    cloneTime = document.querySelector('.schedule-item').cloneNode(true);
+    cloneTime.innerHTML = `
         <div class="select-block">
             <label for="weekday">Dia da semana</label>
             <select name="weekday" id="weekday" required>
@@ -34,34 +40,18 @@ let cloneTime;
         
         `;
 
-        //Coloca o novo horário no Array de horários
-        listOfTime.push(cloneTime);
+    //  Coloca o novo horário no Array de horários
+    listOfTime.push(cloneTime);
 
-        //Adiciona o novo horário na page
-        document.getElementById('schedule-items').appendChild(cloneTime);
-    });
-
-})();
-
+    //  Adiciona o novo horário na page
+    document.getElementById('schedule-items').appendChild(cloneTime);
+  });
+}());
 
 function removeTime() {
-    //Remove o horário do Array
-    let itemRemoved = listOfTime.pop();
-    //Remove o horário da page
-    document.getElementById('schedule-items').removeChild(itemRemoved);
+  //  Remove o horário do Array
+  const itemRemoved = listOfTime.pop();
 
+  //  Remove o horário da page
+  document.getElementById('schedule-items').removeChild(itemRemoved);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
