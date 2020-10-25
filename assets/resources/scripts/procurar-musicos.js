@@ -6,10 +6,10 @@ const $$ = function (name) {
 
 function noResults() {
   // VsCode
-  window.location = `${window.location.origin}/assets/resources/pages/no-results.html`;
+  // window.location = `${window.location.origin}/assets/resources/pages/no-results.html`;
 
   // GitHub
-  // window.location = `/decag/assets/resources/pages/no-results.html`;
+  window.location = '/decag/assets/resources/pages/no-results.html';
 }
 
 (function () {
@@ -50,10 +50,10 @@ function noResults() {
       
                 <div id="segunda" class="day-item">
                   <p>
-                    <small>Dia</small><br>i
+                    <small>Dia</small><br>
                     <strong>Segunda</strong><br>
                     <small>Horário</small><br>
-                    <span id="segHr">${musico[i].time_to} - ${musico[i].time_from}</span>
+                    <span id="segHr">${musico[i].timeTo} - ${musico[i].timeFrom}</span>
                   </p>
                 </div>
       
@@ -62,7 +62,7 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Terça</strong><br>
                     <small>Horário</small><br>
-                    <span id="terHr">${musico[i].time_to} - ${musico[i].time_from}</span>
+                    <span id="terHr">${musico[i].timeTo} - ${musico[i].timeFrom}</span>
                   </p>
                 </div>
                 <div id="quarta" class="day-item">
@@ -70,7 +70,7 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Quarta</strong><br>
                     <small>Horário</small><br>
-                    <span id="quarHr">${musico[i].time_to} - ${musico[i].time_from}</span>
+                    <span id="quarHr">${musico[i].timeTo} - ${musico[i].timeFrom}</span>
                   </p>
                 </div>
                 <div id="quinta" class="day-item">
@@ -78,7 +78,7 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Quinta</strong><br>
                     <small>Horário</small><br>
-                    <span id="quinHr">${musico[i].time_to} - ${musico[i].time_from}</span>
+                    <span id="quinHr">${musico[i].timeTo} - ${musico[i].timeFrom}</span>
                   </p>
                 </div>
                 <div id="sexta" class="day-item">
@@ -86,7 +86,7 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Sexta</strong><br>
                     <small>Horário</small><br>
-                    <span id="sexHr">${musico[i].time_to} - ${musico[i].time_from}</span>
+                    <span id="sexHr">${musico[i].timeTo} - ${musico[i].timeFrom}</span>
                   </p>
                 </div>
                 <div id="sabado" class="day-item">
@@ -94,7 +94,7 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Sabado</strong><br>
                     <small>Horário</small><br>
-                    <span id="sexHr">${musico[i].time_to} - ${musico[i].time_from}</span>
+                    <span id="sexHr">${musico[i].timeTo} - ${musico[i].timeFrom}</span>
                   </p>
                 </div>
                 <div id="domingo" class="day-item">
@@ -102,7 +102,7 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Domingo</strong><br>
                     <small>Horário</small><br>
-                    <span id="sexHr">${musico[i].time_to} - ${musico[i].time_from}</span>
+                    <span id="sexHr">${musico[i].timeTo} - ${musico[i].timeFrom}</span>
                   </p>
                 </div>
       
