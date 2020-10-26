@@ -76,6 +76,9 @@
       }
     };
 
+    //  Campo com valor padrão da BIOGRAFIA
+    form.bio.value = 'Olá me chamo...';
+
     //  Avisa o usuário se ele não preencher o custo do horário
     form.cost.addEventListener('blur', () => {
       const cost = $('cost').value;
@@ -124,10 +127,10 @@
       database.saveItemArray('musicos', musico);
 
       // VsCode
-      // window.location.href = '/assets/resources/pages/cadastro-concluido.html';
+      window.location.href = '/assets/resources/pages/cadastro-concluido.html';
 
       // GitHub
-      window.location = '/decag/assets/resources/pages/cadastro-concluido.html';
+      // window.location = '/decag/assets/resources/pages/cadastro-concluido.html';
 
       return false;
     };
