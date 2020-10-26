@@ -71,13 +71,13 @@
     //  Evita que o usuario digite algo além de números no Whatsapp
     form.whatsapp.onkeypress = function (event) {
       const number = event.charCode;
-      if (!(number >= 48 && number <= 57)) {
+      if (!((number >= 48 && number <= 57) || (number === 45))) {
         event.preventDefault();
       }
     };
 
     //  Campo com valor padrão da BIOGRAFIA
-    form.bio.value = 'Olá me chamo...';
+    form.bio.value = 'Olá me chamo..';
 
     //  Avisa o usuário se ele não preencher o custo do horário
     form.cost.addEventListener('blur', () => {

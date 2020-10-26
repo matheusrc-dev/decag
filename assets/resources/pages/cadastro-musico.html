@@ -47,7 +47,7 @@
 
           <div class="input-block">
             <label for="name">Nome completo</label>
-            <input name="name" id="name" autofocus required>
+            <input name="name" id="name" pattern="[a-z|A-Z\s]+$" autofocus required>
           </div>
 
           <div class="input-block">
@@ -58,12 +58,12 @@
 
           <div class="input-block">
             <label for="whatsapp">WhatsApp</label>
-            <input name="whatsapp" id="whatsapp" type="text"  maxlength="13" required>
+            <input name="whatsapp" id="whatsapp" type="text"  maxlength="14" pattern="\d{7}-\d{4}" required>
           </div>
 
           <div class="textarea-block">
             <label for="bio">Biografia</label>
-            <textarea name="bio" id="bio" minlength="10" maxlength="240" required></textarea>
+            <textarea name="bio" id="bio" minlength="20" maxlength="240" required></textarea>
           </div>
 
         </fieldset>
@@ -184,7 +184,7 @@
             <label for="cost">Custo da sua hora
               <small>(R$)</small>
             </label>
-            <input name="cost" id="cost" type="text" required>
+            <input name="cost" id="cost" type="number" required>
           </div>
         </fieldset>
 
