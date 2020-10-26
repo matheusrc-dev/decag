@@ -13,10 +13,10 @@ function update() {
   }
   if (musico.length > 0) {
     //  VsCode
-    window.location = '/assets/resources/pages/procurar-musicos.html';
+    // window.location = '/assets/resources/pages/procurar-musicos.html';
 
     // GitHub
-    // window.location = '/decag/assets/resources/pages/procurar-musicos.html';
+    window.location = '/decag/assets/resources/pages/procurar-musicos.html';
   }
 
   const info = document.getElementsByTagName('p');
