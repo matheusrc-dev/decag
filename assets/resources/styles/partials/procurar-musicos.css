@@ -128,17 +128,16 @@
 }
 
 .weekdays {
-    display: flex;
-    justify-content: space-between;
-    margin: 36px;
+    display: block;
+    margin: 16px;
 }
 
 .weekdays .day-item{
     border: solid 1px var(--color-text-base);
     border-radius: 10px;
-    height: 120px;
-    width: 85px;
-    padding: 8px
+    padding: 8px;
+    display: inline-block;
+    margin: inherit;
 }
 
 #page-musico main .no-results {
@@ -215,6 +214,21 @@
 
     .musician-item footer button img {
         margin-right: 16px;
+    }
+
+    .weekdays {
+        display: flex;
+        justify-content: space-between;
+        margin: 36px;
+    }
+    
+    .weekdays .day-item{
+        border: solid 1px var(--color-text-base);
+        border-radius: 10px;
+        height: 120px;
+        width: 85px;
+        padding: 8px;
+        margin: 0;
     }
 }
 

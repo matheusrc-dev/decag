@@ -1,18 +1,18 @@
 'use strict';
 
-const $$ = function (name) {
-  return document.getElementsByName(name);
-};
-
-function noResults() {
+const noResults = function noResults() {
   // VsCode
   // window.location = `${window.location.origin}/assets/resources/pages/no-results.html`;
 
   // GitHub
   window.location = '/decag/assets/resources/pages/no-results.html';
-}
+};
 
 (function () {
+  const $$ = function (name) {
+    return document.getElementsByName(name);
+  };
+
   const instrumentos = JSON.parse(localStorage.getItem('instrumentos'));
   const filterInstrumentos = $$('subject');
   const insertOnMain = document.getElementsByTagName('main');
@@ -94,7 +94,7 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Sabado</strong><br>
                     <small>Horário</small><br>
-                    <span id="sexHr">${musico[i].timeTo} - ${musico[i].timeFrom}</span>
+                    <span id="sabHr">${musico[i].timeTo} - ${musico[i].timeFrom}</span>
                   </p>
                 </div>
                 <div id="domingo" class="day-item">
@@ -102,14 +102,12 @@ function noResults() {
                     <small>Dia</small><br>
                     <strong>Domingo</strong><br>
                     <small>Horário</small><br>
-                    <span id="sexHr">${musico[i].timeTo} - ${musico[i].timeFrom}</span>
+                    <span id="domHr">${musico[i].timeTo} - ${musico[i].timeFrom}</span>
                   </p>
                 </div>
       
               </div>
-      
-      
-      
+  
               <footer>
                 <p>Preço/hora<strong>R$ ${musico[i].cost},00</strong></p>
       

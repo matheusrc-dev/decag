@@ -1,6 +1,6 @@
 'use strict';
 
-function update() {
+const update = function update() {
   const instrumentos = JSON.parse(localStorage.getItem('instrumentos'));
   const filterInstrumentos = document.getElementsByName('subject');
   const musico = database.getArray('musicos');
@@ -39,4 +39,4 @@ function update() {
   };
 
   setInterval(horario, 1000);
-}
+};

@@ -3,15 +3,16 @@
 const listOfTime = [];
 let cloneTime;
 
-function $(id) {
+const $ = function $(id) {
   return document.getElementById(id);
-}
+};
 
 (function () {
   //  Adiciona o evento de click para adicionar outro horário
   $('add-time').addEventListener('click', () => {
-    cloneTime = document.querySelector('.schedule-item').cloneNode(true);
-    cloneTime.innerHTML = `
+    if (listOfTime.length <= 5) {
+      cloneTime = document.querySelector('.schedule-item').cloneNode(true);
+      cloneTime.innerHTML = `
         <div class="select-block">
             <label for="weekday">Dia da semana</label>
             <select name="weekday" id="weekday" required>
@@ -40,11 +41,14 @@ function $(id) {
         
         `;
 
-    //  Coloca o novo horário no Array de horários
-    listOfTime.push(cloneTime);
+      //  Coloca o novo horário no Array de horários
+      listOfTime.push(cloneTime);
 
-    //  Adiciona o novo horário na page
-    document.getElementById('schedule-items').appendChild(cloneTime);
+      //  Adiciona o novo horário na page
+      document.getElementById('schedule-items').appendChild(cloneTime);
+    } else {
+      return false;
+    }
   });
 }());
 

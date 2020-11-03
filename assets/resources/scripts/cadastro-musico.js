@@ -5,6 +5,7 @@
   let email;
   const small = document.createElement('small');
   const form = document.forms[0];
+  const wks = document.getElementsByName('weekday');
 
   //  Adiciona os instrumentos no array
   const instrumentosVector = document.getElementsByName('instrumentCheck');
@@ -97,7 +98,6 @@
     };
 
     //  Faz a validação e o envio do formulário ONSUBMIT
-
     form.onsubmit = function () {
       if (!isAtLeastOneInstrumentSelected(instrumentosVector)) {
         window.alert('Ops! Você esqueceu de selecionar os intrumentos');
@@ -140,14 +140,14 @@
 //  Adiciona um <small> no campo do Link da sua foto
 const small = document.createElement('small');
 
-function mostraInfo(input) {
+const mostraInfo = function mostraInfo(input) {
   small.innerText = '(comece com https://)';
   document.querySelector(`label[for="${input}"]`).appendChild(small);
   document.querySelector('#avatar').setAttribute('placeholder', 'https://');
-}
+};
 
 //  Retira o <small> do campo do Link da sua foto
-function retiraInfo(input) {
+const retiraInfo = function retiraInfo(input) {
   document.querySelector(`label[for="${input}"]`).removeChild(small);
   document.querySelector('#avatar').setAttribute('placeholder', '');
-}
+};
