@@ -5,7 +5,7 @@ GitHub Pages: https://mat-zip.github.io/decag/
 <br>
 Relatório - 1: https://youtu.be/skAUHrhECPQ
 <br>
-Relatório - 2:
+Relatório - 2: https://youtu.be/mkM-L-3hAbw
 
 
 Caixas de Diálogo
