@@ -1,7 +1,7 @@
 'use strict';
 
 class Musico {
-  constructor(id, name, avatar, whatsapp, bio, instruments, cost, weekdays, timeFrom, timeTo) {
+  constructor(id, name, avatar, whatsapp, bio, instruments, cost) {
     this.id = id;
     this.name = name;
     this.avatar = avatar;
@@ -9,8 +9,10 @@ class Musico {
     this.bio = bio;
     this.instruments = instruments;
     this.cost = cost;
-    this.weekdays = weekdays;
-    this.timeFrom = timeFrom;
-    this.timeTo = timeTo;
+    this.schedules = ['', '', '', '', '', '', '', ''];
+  }
+
+  addSchedule(schedule) {
+    this.schedules.splice(schedule.weekdays, 1, schedule);
   }
 }

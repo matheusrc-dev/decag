@@ -5,7 +5,6 @@
   let email;
   const small = document.createElement('small');
   const form = document.forms[0];
-  const wks = document.getElementsByName('weekday');
 
   //  Adiciona os instrumentos no array
   const instrumentosVector = document.getElementsByName('instrumentCheck');
@@ -98,7 +97,7 @@
     };
 
     //  Faz a validação e o envio do formulário ONSUBMIT
-    form.onsubmit = function () {
+    form.onsubmit = () => {
       if (!isAtLeastOneInstrumentSelected(instrumentosVector)) {
         window.alert('Ops! Você esqueceu de selecionar os intrumentos');
         return false;
@@ -123,7 +122,13 @@
       const timeFrom = form.time_from.value;
       const timeTo = form.time_to.value;
 
-      const musico = new Musico(database.sequenceId('musicos'), name, avatar, whatsapp, bio, instruments, cost, weekday, timeFrom, timeTo);
+      //  Adiciona o horário e dia da semana em Schedule
+      const schedule = new Schedule(weekday, timeFrom, timeTo);
+
+      //  Outros atributos no objeto musico
+      const musico = new Musico(database.sequenceId('musicos'), name, avatar, whatsapp, bio, instruments, cost);
+      musico.addSchedule(schedule);
+
       database.saveItemArray('musicos', musico);
 
       // VsCode
