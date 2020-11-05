@@ -53,8 +53,8 @@ const noResults = function noResults() {
                     <small>Dia</small><br>
                     <strong>Segunda</strong><br>
                     <small>Horário</small><br>
-                    <span id="segHr">${(musico[i].schedules[1].timeFrom === undefined) ? '' : musico[i].schedules[1].timeFrom} - 
-                    ${(musico[i].schedules[1].timeTo === undefined) ? '' : musico[i].schedules[1].timeTo}</span>
+                    <span id="segHr">${(musico[i].schedules[1] === null) ? '' : musico[i].schedules[1].timeFrom} - 
+                    ${(musico[i].schedules[1] === null) ? '' : musico[i].schedules[1].timeTo}</span>
                   </p>
                 </div>
       
@@ -63,8 +63,8 @@ const noResults = function noResults() {
                     <small>Dia</small><br>
                     <strong>Terça</strong><br>
                     <small>Horário</small><br>
-                    <span id="terHr">${(musico[i].schedules[2].timeFrom === undefined) ? '' : musico[i].schedules[2].timeFrom} - 
-                    ${(musico[i].schedules[2].timeTo === undefined) ? '' : musico[i].schedules[2].timeTo}</span>
+                    <span id="terHr">${(musico[i].schedules[2] === null) ? '' : musico[i].schedules[2].timeFrom} - 
+                    ${(musico[i].schedules[2] === null) ? '' : musico[i].schedules[2].timeTo}</span>
                   </p>
                 </div>
                 <div id="quarta" class="day-item">
@@ -72,8 +72,8 @@ const noResults = function noResults() {
                     <small>Dia</small><br>
                     <strong>Quarta</strong><br>
                     <small>Horário</small><br>
-                    <span id="quarHr">${(musico[i].schedules[3].timeFrom === undefined) ? '' : musico[i].schedules[3].timeFrom} - 
-                    ${(musico[i].schedules[3].timeTo === undefined) ? '' : musico[i].schedules[3].timeTo}</span>
+                    <span id="quarHr">${(musico[i].schedules[3] === null) ? '' : musico[i].schedules[3].timeFrom} - 
+                    ${(musico[i].schedules[3] === null) ? '' : musico[i].schedules[3].timeTo}</span>
                   </p>
                 </div>
                 <div id="quinta" class="day-item">
@@ -81,8 +81,8 @@ const noResults = function noResults() {
                     <small>Dia</small><br>
                     <strong>Quinta</strong><br>
                     <small>Horário</small><br>
-                    <span id="quinHr">${(musico[i].schedules[4].timeFrom === undefined) ? '' : musico[i].schedules[4].timeFrom} - 
-                    ${(musico[i].schedules[4].timeTo === undefined) ? '' : musico[i].schedules[4].timeTo}</span>
+                    <span id="quinHr">${(musico[i].schedules[4] === null) ? '' : musico[i].schedules[4].timeFrom} - 
+                    ${(musico[i].schedules[4] === null) ? '' : musico[i].schedules[4].timeTo}</span>
                   </p>
                 </div>
                 <div id="sexta" class="day-item">
@@ -90,8 +90,8 @@ const noResults = function noResults() {
                     <small>Dia</small><br>
                     <strong>Sexta</strong><br>
                     <small>Horário</small><br>
-                    <span id="sexHr">${(musico[i].schedules[5].timeFrom === undefined) ? '' : musico[i].schedules[5].timeFrom} - 
-                    ${(musico[i].schedules[5].timeTo === undefined) ? '' : musico[i].schedules[5].timeTo}</span>
+                    <span id="sexHr">${(musico[i].schedules[5] === null) ? '' : musico[i].schedules[5].timeFrom} - 
+                    ${(musico[i].schedules[5] === null) ? '' : musico[i].schedules[5].timeTo}</span>
                   </p>
                 </div>
                 <div id="sabado" class="day-item">
@@ -99,8 +99,8 @@ const noResults = function noResults() {
                     <small>Dia</small><br>
                     <strong>Sabado</strong><br>
                     <small>Horário</small><br>
-                    <span id="sabHr">${(musico[i].schedules[6].timeFrom === undefined) ? '' : musico[i].schedules[6].timeFrom} - 
-                    ${(musico[i].schedules[6].timeTo === undefined) ? '' : musico[i].schedules[6].timeTo}</span>
+                    <span id="sabHr">${(musico[i].schedules[6] === null) ? '' : musico[i].schedules[6].timeFrom} - 
+                    ${(musico[i].schedules[6] === null) ? '' : musico[i].schedules[6].timeTo}</span>
                   </p>
                 </div>
                 <div id="domingo" class="day-item">
@@ -108,8 +108,8 @@ const noResults = function noResults() {
                     <small>Dia</small><br>
                     <strong>Domingo</strong><br>
                     <small>Horário</small><br>
-                    <span id="domHr">${(musico[i].schedules[7].timeFrom === undefined) ? '' : musico[i].schedules[7].timeFrom} - 
-                    ${(musico[i].schedules[7].timeTo === undefined) ? '' : musico[i].schedules[7].timeTo}</span>
+                    <span id="domHr">${(musico[i].schedules[7] === null) ? '' : musico[i].schedules[7].timeFrom} - 
+                    ${(musico[i].schedules[7] === null) ? '' : musico[i].schedules[7].timeTo}</span>
                   </p>
                 </div>
       

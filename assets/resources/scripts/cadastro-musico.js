@@ -5,6 +5,7 @@
   let email;
   const small = document.createElement('small');
   const form = document.forms[0];
+  const schedules = new Array(8);
 
   //  Adiciona os instrumentos no array
   const instrumentosVector = document.getElementsByName('instrumentCheck');
@@ -34,6 +35,18 @@
   localStorage.setItem('instrumentos', JSON.stringify(instrumentosString));
 
   window.onload = function () {
+    $('addSchedule').addEventListener('click', () => {
+      const weekday = form.weekday.selectedIndex;
+      const timeFrom = form.time_from.value;
+      const timeTo = form.time_to.value;
+
+      //  Adiciona o horário e dia da semana em Schedule
+      const schedule = new Schedule(weekday, timeFrom, timeTo);
+      schedules[weekday] = schedule;
+
+      console.log(schedules);
+    });
+
     function validaEmail(emailToConfirm) {
       if (emailToConfirm === '') {
         return false;
@@ -107,7 +120,7 @@
       const name = form.name.value.toUpperCase();
       const avatar = form.avatar.value;
       const whatsapp = form.whatsapp.value;
-      const bio = form.bio.value.toLowerCase();
+      const bio = form.bio.value;
       const instruments = [];
 
       //  Adiciona apenas os Instrumentos checked
@@ -118,16 +131,9 @@
       }
 
       const cost = form.cost.value;
-      const weekday = form.weekday.selectedIndex;
-      const timeFrom = form.time_from.value;
-      const timeTo = form.time_to.value;
-
-      //  Adiciona o horário e dia da semana em Schedule
-      const schedule = new Schedule(weekday, timeFrom, timeTo);
 
       //  Outros atributos no objeto musico
-      const musico = new Musico(database.sequenceId('musicos'), name, avatar, whatsapp, bio, instruments, cost);
-      musico.addSchedule(schedule);
+      const musico = new Musico(database.sequenceId('musicos'), name, avatar, whatsapp, bio, instruments, cost, schedules);
 
       database.saveItemArray('musicos', musico);
 
