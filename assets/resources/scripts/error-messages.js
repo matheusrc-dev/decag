@@ -38,7 +38,7 @@
     }
 
     if (whatsapp.validity.patternMismatch) {
-      whatsapp.setCustomValidity('Corriga para o formato 4299999-9999');
+      whatsapp.setCustomValidity('Corriga para o formato 5542999999999');
     } else {
       whatsapp.setCustomValidity('');
     }

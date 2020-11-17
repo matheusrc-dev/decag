@@ -51,7 +51,7 @@
 }
 
 #page-musico .input-block+.input-block,
-#page-musico .input-block+.textarea-block, 
+#page-musico .input-block+.textarea-block,
 #page-musico .select-block+.textarea-block {
     margin-top: 2.4rem;
 }
@@ -84,7 +84,7 @@
     margin-right: 2rem;
 }
 
-#page-musico main footer button{
+#page-musico main footer button {
     width: 100%;
     height: 5.6rem;
     background: var(--color-secondary);
@@ -99,7 +99,7 @@
     text-decoration: none;
 
     transition: 0.2s;
-    margin-top: 3.2rem; 
+    margin-top: 3.2rem;
 }
 
 #page-musico main footer button:hover {
@@ -112,11 +112,13 @@
     border-top: 1px solid var(--color-line-in-white);
 }
 
-.schedule-item .delete-icon{
-    height: 22px;
-    width: 22px;
-    margin-left: 5em;
-    cursor: pointer;
+.addedHour {
+    padding: 16px 16px;
+    margin: 16px 0;
+    text-transform: uppercase;
+    background: #e2effb;
+    border-radius: 5px;
+    color: #2d2b2b;
 }
 
 @media (min-width: 700px) {
@@ -161,5 +163,3 @@
         display: block;
     }
 }
-
-

@@ -58,7 +58,7 @@
 
           <div class="input-block">
             <label for="whatsapp">WhatsApp</label>
-            <input name="whatsapp" id="whatsapp" type="text"  maxlength="14" pattern="\d{10}-\d{4}" required>
+            <input name="whatsapp" id="whatsapp" type="text"  maxlength="13" pattern="\d{13}" required>
           </div>
 
           <div class="textarea-block">
@@ -221,7 +221,7 @@
 
               <input type="time" name="time_to" id="time_to" required>
             </div>
-            <button type="button" id="addSchedule">Inserir Horário</button>
+            <button type="button" id="addSchedule">+ Clique aqui para inserir o Horário</button>
           </div>
 
         </fieldset>
@@ -237,13 +237,13 @@
       </footer>
     </main>
   </div>
-
+  <script src ="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="../scripts/scripts-jquery.js"></script>
   <script src="../scripts/classes/musico.js"></script>
   <script src="../scripts/classes/schedule.js"></script>
   <script src="../scripts/classes/instrumento.js"></script>
   <script src="../scripts/database.js"></script>
   <script src="../scripts/cadastro-musico.js"></script>
-  <script src="../scripts/novo-horario.js"></script>
   <script src="../scripts/error-messages.js"></script>
 </body>
 

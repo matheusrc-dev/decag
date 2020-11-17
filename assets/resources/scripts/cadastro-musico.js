@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 'use strict';
 
 (function () {
@@ -8,11 +10,11 @@
   const schedules = new Array(8);
 
   //  Adiciona os instrumentos no array
-  const instrumentosVector = document.getElementsByName('instrumentCheck');
+  const instrumentosVector = $('#create-class .form-check-input');
   const instrumentosQtd = instrumentosVector.length;
   const instrumentosString = [];
 
-  const $ = function $(id) {
+  const $$ = function $$(id) {
     return document.getElementById(id);
   };
 
@@ -31,20 +33,53 @@
     instrumentosString.splice(i, 1, document.querySelector(`label[for="instrumentCheck${[i]}"]`).innerText.trim());
   }
 
-  //  Colocar os valores no web storage atraves ta classe instrumentoo
+  //  Colocar os valores no web storage atraves da classe instrumentoo
   localStorage.setItem('instrumentos', JSON.stringify(instrumentosString));
 
   window.onload = function () {
-    $('addSchedule').addEventListener('click', () => {
-      const weekday = form.weekday.selectedIndex;
-      const timeFrom = form.time_from.value;
-      const timeTo = form.time_to.value;
+    $('.input-block +button').css({
+      width: '100%',
+      height: '5.6rem',
+      background: 'var(--color-primary-dark)',
+      color: 'var(--color-button-text)',
+      border: '0',
+      'border-radius': '.8rem',
+      cursor: 'pointer',
+      font: '300 1.6rem Archivo',
+      display: 'flex',
+      'align-items': 'center',
+      'justify-content': 'center',
+      'text-decoration': 'none',
+      transition: '0.2s',
+      'margin-top': '3.2rem',
+    });
 
-      //  Adiciona o horário e dia da semana em Schedule
-      const schedule = new Schedule(weekday, timeFrom, timeTo);
-      schedules[weekday] = schedule;
+    function showAddedSchedule(schedule) {
+      const div = document.createElement('div');
+      //  Jquery adiciona elemento div abaixo do horário com fadeIn()
 
-      console.log(schedules);
+      $(div).html(`Dia da semana: ${schedule.weekdays} Das: ${schedule.timeFrom} Até ${schedule.timeTo}`);
+      $(div).css('display', 'none');
+      $(div).addClass('addedHour');
+      $('#schedule-items').append(div);
+      $('.addedHour').fadeIn(1000).show();
+    }
+
+    let counterHours = 0;
+    $$('addSchedule').addEventListener('click', () => {
+      if (counterHours < 7) {
+        const weekday = form.weekday.selectedIndex;
+        const timeFrom = form.time_from.value;
+        const timeTo = form.time_to.value;
+
+        //  Adiciona o horário e dia da semana em Schedule
+        const schedule = new Schedule(weekday, timeFrom, timeTo);
+        schedules[weekday] = schedule;
+        showAddedSchedule(schedule);
+        counterHours += 1;
+      } else {
+        window.alert('Você pode inserir no máximo 7 horarios!!!');
+      }
     });
 
     function validaEmail(emailToConfirm) {
@@ -70,15 +105,16 @@
     }
 
     //  Adiciona um <small> no campo do Whatsapp
-    form.whatsapp.addEventListener('focus', () => {
+    $('#whatsapp').on('focus', () => {
       small.innerHTML = '(somente números)';
-
-      document.querySelector('label[for="whatsapp"]').appendChild(small);
+      //  Adiciona Utilizando JQUERY
+      $('label[for="whatsapp"]').append(small);
+      $('small').show();
     });
 
-    //  Remove o <small> do campo do Whatsapp
-    form.whatsapp.addEventListener('blur', () => {
-      document.querySelector('label[for="whatsapp"]').removeChild(small);
+    //  Remove o <small> do campo do Whatsapp com JQUERY
+    $('#whatsapp').on('blur', () => {
+      $('small').hide();
     });
 
     //  Evita que o usuario digite algo além de números no Whatsapp
@@ -89,12 +125,12 @@
       }
     };
 
-    //  Campo com valor padrão da BIOGRAFIA
-    form.bio.value = 'Olá me chamo..';
+    //  Campo com valor padrão da BIOGRAFIA com JQUERY
+    $('#bio').text('Olá me chamo..');
 
     //  Avisa o usuário se ele não preencher o custo do horário
-    form.cost.addEventListener('blur', () => {
-      const cost = $('cost').value;
+    $('#create-class').find('#cost').on('blur', () => {
+      const cost = $$('cost').value;
 
       if (cost === '') {
         window.alert('Por favor informe o custo do seu horário');
