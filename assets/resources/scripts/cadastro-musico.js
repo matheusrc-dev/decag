@@ -58,7 +58,8 @@
       const div = document.createElement('div');
       //  Jquery adiciona elemento div abaixo do horário com fadeIn()
 
-      $(div).html(`Dia da semana: ${schedule.weekdays} Das: ${schedule.timeFrom} Até ${schedule.timeTo}`);
+      $(div).html(`Dia da semana: ${schedule.weekdays} Das: ${schedule.timeFrom} Até ${schedule.timeTo}
+      &nbsp<img src="../images/icons/delete.png" onclick="removeSchedule()">`);
       $(div).css('display', 'none');
       $(div).addClass('addedHour');
       $('#schedule-items').append(div);
@@ -67,6 +68,12 @@
 
     let counterHours = 0;
     $$('addSchedule').addEventListener('click', () => {
+      if (form.weekday.selectedIndex === 0 || form.time_from.value === '' || form.time_to.value === ''
+      || schedules[form.weekday.selectedIndex] !== undefined) {
+        window.alert('[Warning] - Reveja seu horário, ou você esqueceu algum campo ou este dia da semana já existe');
+        return;
+      }
+
       if (counterHours < 7) {
         const weekday = form.weekday.selectedIndex;
         const timeFrom = form.time_from.value;
@@ -174,10 +181,10 @@
       database.saveItemArray('musicos', musico);
 
       // VsCode
-      // window.location.href = '/assets/resources/pages/cadastro-concluido.html';
+      window.location.href = '/assets/resources/pages/cadastro-concluido.html';
 
       // GitHub
-      window.location = '/decag/assets/resources/pages/cadastro-concluido.html';
+      // window.location = '/decag/assets/resources/pages/cadastro-concluido.html';
 
       return false;
     };
@@ -187,6 +194,7 @@
 //  Adiciona um <small> no campo do Link da sua foto
 const small = document.createElement('small');
 
+// eslint-disable-next-line no-unused-vars
 const mostraInfo = function mostraInfo(input) {
   small.innerText = '(comece com https://)';
   document.querySelector(`label[for="${input}"]`).appendChild(small);
@@ -194,6 +202,7 @@ const mostraInfo = function mostraInfo(input) {
 };
 
 //  Retira o <small> do campo do Link da sua foto
+// eslint-disable-next-line no-unused-vars
 const retiraInfo = function retiraInfo(input) {
   document.querySelector(`label[for="${input}"]`).removeChild(small);
   document.querySelector('#avatar').setAttribute('placeholder', '');

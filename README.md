@@ -105,3 +105,7 @@ Web Storage
 - [x] LocalStorage ou SessionStorage
 - [ ] Leitura e escrita de dados simples
 - [x] Leitura e escrita de JSON
+
+AJAX
+
+- [ ] Implementação funcional (basta fazer funcionar uma requisição) do backend em ExpressJS na plataforma Node e requisições AJAX.
