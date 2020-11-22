@@ -126,5 +126,23 @@ const noResults = function noResults() {
               </footer>`;
       insertOnMain[0].appendChild(musicianItem);
     }
+
+    const form1 = document.forms[0];
+
+    form1.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const subject = form1.subject.value;
+      const musicianItem = document.querySelectorAll('.musician-item');
+      let i = 0;
+      musicianItem.forEach(() => {
+        if (!musico[i].instruments.includes(subject)) {
+          musicianItem[i].classList.add('is-hide');
+        } else {
+          console.log(musicianItem[i]);
+          musicianItem[i].classList.remove('is-hide');
+        }
+        i += 1;
+      });
+    });
   };
 }());

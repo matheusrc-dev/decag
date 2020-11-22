@@ -58,8 +58,7 @@
       const div = document.createElement('div');
       //  Jquery adiciona elemento div abaixo do horário com fadeIn()
 
-      $(div).html(`Dia da semana: ${schedule.weekdays} Das: ${schedule.timeFrom} Até ${schedule.timeTo}
-      &nbsp<img src="../images/icons/delete.png" onclick="removeSchedule()">`);
+      $(div).html(`Dia da semana: ${schedule.weekdays} Das: ${schedule.timeFrom} Até ${schedule.timeTo}`);
       $(div).css('display', 'none');
       $(div).addClass('addedHour');
       $('#schedule-items').append(div);
@@ -69,7 +68,7 @@
     let counterHours = 0;
     $$('addSchedule').addEventListener('click', () => {
       if (form.weekday.selectedIndex === 0 || form.time_from.value === '' || form.time_to.value === ''
-      || schedules[form.weekday.selectedIndex] !== undefined) {
+        || schedules[form.weekday.selectedIndex] !== undefined) {
         window.alert('[Warning] - Reveja seu horário, ou você esqueceu algum campo ou este dia da semana já existe');
         return;
       }
@@ -190,6 +189,7 @@
     };
   };
 }());
+
 
 //  Adiciona um <small> no campo do Link da sua foto
 const small = document.createElement('small');
