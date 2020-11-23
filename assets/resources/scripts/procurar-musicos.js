@@ -2,10 +2,10 @@
 
 const noResults = function noResults() {
   // VsCode
-  window.location = `${window.location.origin}/assets/resources/pages/no-results.html`;
+  // window.location = `${window.location.origin}/assets/resources/pages/no-results.html`;
 
   // GitHub
-  // window.location = '/decag/assets/resources/pages/no-results.html';
+  window.location = '/decag/assets/resources/pages/no-results.html';
 };
 
 (function () {

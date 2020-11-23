@@ -180,10 +180,10 @@
       database.saveItemArray('musicos', musico);
 
       // VsCode
-      window.location.href = '/assets/resources/pages/cadastro-concluido.html';
+      // window.location.href = '/assets/resources/pages/cadastro-concluido.html';
 
       // GitHub
-      // window.location = '/decag/assets/resources/pages/cadastro-concluido.html';
+      window.location = '/decag/assets/resources/pages/cadastro-concluido.html';
 
       return false;
     };
