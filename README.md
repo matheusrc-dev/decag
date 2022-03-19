@@ -1,7 +1,7 @@
 # Decag
 Plataforma para contratar músicos
 
-GitHub Pages: https://mat-zip.github.io/decag/
+Acesse o site aqui: https://matheusrc-dev.github.io/decag/
 <br>
 Relatório - 1: https://youtu.be/skAUHrhECPQ
 <br>
